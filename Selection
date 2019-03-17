@@ -1,0 +1,16 @@
+//选择排序
+template<class T>
+void SelectionSort(T Data[],int n){
+	for(int i = 1;i < n;i++){//共进行n-1趟选择，第i趟时的待排序列为Data[i-1],...,Data[n-1] 
+		int k = i-1;//记录当前待排序列的第一个元素
+		for(int j = i;j < n;j++){//找到待排序列中最小元素的下标 
+			if(Data[j] < Data[k])
+			  k=j;
+		} 
+	  if(k != i-1){//交换最小元素到当前待排序列的第一个位置 
+		  T t = Data[k];
+		  Data[k] = Data[i-1];
+		  Data[i-1] = t;
+	  }
+  }
+}
