@@ -4,10 +4,10 @@ int Partition(T Data[],int left,int right){//实现对data[left]到data[right]�
 	T pivot = Data[left];//选择最左边的为轴元素
 	while(left < right){//外层循环控制遍历数组 
 		while(left<right && Data[right]>pivot)//控制right指针的移动
-		right--;
+			right--;
 		Data[left] = Data[right];//将right指向的数据移动到left位置
 		while(left<right && Data[left]<=pivot)//控制left指针移动
-		left++;
+			left++;
 		Data[right] = Data[left];//将left指向的数据移动到right位置 
 	} 
 	Data[left] = pivot;//将轴元素放到left位置
