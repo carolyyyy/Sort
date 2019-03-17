@@ -1,0 +1,23 @@
+//快速排序
+template<class T>
+int Partition(T Data[],int left,int right){//实现对data[left]到data[right]的分割操作，并返回划分后轴元素对应的位//置 
+	T pivot = Data[left];//选择最左边的为轴元素
+	while(left < right){//外层循环控制遍历数组 
+		while(left<right && Data[right]>pivot)//控制right指针的移动
+		right--;
+		Data[left] = Data[right];//将right指向的数据移动到left位置
+		while(left<right && Data[left]<=pivot)//控制left指针移动
+		left++;
+		Data[right] = Data[left];//将left指向的数据移动到right位置 
+	} 
+	Data[left] = pivot;//将轴元素放到left位置
+	return left;//返回轴元素的新位置，实现分治 
+}
+
+template<class T>
+void QuickSort(T Data[],int left,int right){//用分治法实现快速排序算法 
+	if(left < right){//控制分治的结束条件 
+		int p = Partition(Data,left,right);//实现分割并找到分离的位置 
+		QuickSort(Data,left,p-1);//对左边的子序列进行快速排序
+		QuickSort(Data,p+1,right);//对右边的子序列进行快速排序 
+	}
