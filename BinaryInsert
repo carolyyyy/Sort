@@ -8,9 +8,9 @@ void BinaryInsertionSort(T Data[],int n){//参数：待排序数据和待排序�
 		while(left <= right){//执行折半查找 
 			mid = (left+right)/2;//求出中心点
 			if(Data[mid] > temp)//中心点元素值比待插入数据大
-			right = mid-1;//更新右区间值
+				right = mid-1;//更新右区间值
 			else
-			left = mid+1;//更新左区间值 
+				left = mid+1;//更新左区间值 
 		} 
 		for(int i = p-1;i >= left;i--)//执行移动操作
 		  Data[i+1] = Data[i];
