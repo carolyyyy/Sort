@@ -7,10 +7,10 @@ void SelectionSort(T Data[],int n){
 			if(Data[j] < Data[k])
 			  k=j;
 		} 
-	  if(k != i-1){//交换最小元素到当前待排序列的第一个位置 
-		  T t = Data[k];
-		  Data[k] = Data[i-1];
-		  Data[i-1] = t;
-	  }
-  }
+	  	if(k != i-1){//交换最小元素到当前待排序列的第一个位置 
+		  	T t = Data[k];
+		  	Data[k] = Data[i-1];
+		  	Data[i-1] = t;
+	  	}
+  	}
 }
