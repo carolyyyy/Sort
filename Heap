@@ -1,0 +1,10 @@
+template<class T>
+void HeapSort(T Data[], int n){
+  BuildHeap(Data,n);//建立一个最大堆
+  for(int i = n-1; i > 0;i--){//进行循环
+    T t = Data[0];//每次取出最大元素后不断调整最大堆
+    Data[0] = Data[i];
+    Data[i] = t;
+    MaxHeap(Data,0,i);
+  }
+}
