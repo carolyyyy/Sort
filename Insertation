@@ -1,0 +1,14 @@
+//直接插入排序
+template<class T>
+void InsertionSort(T Data[],int n){//利用直接插入排序对于n个数据元素进行不减序排序 
+	int p,i;
+	for(p = 1;p < n;p++){//循环，p表示插入趟数，共进行n-1趟插入 
+		T temp = Data[p];//把待插入元素赋给temp
+		i = p-1;
+		while(i>=0 && Data[i]>temp){//把比temp大的元素都向后移动 
+			Data[i+1] = Data[i];
+			i--;
+		} 
+		Data[i+1] = temp;//i+1为temp的位置，将temp插入到这个位置 
+	}
+}
